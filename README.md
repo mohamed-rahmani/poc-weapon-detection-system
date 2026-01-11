@@ -1,4 +1,4 @@
-# Weapon Detection API 🔫🚨
+# POC Weapon Detection System
 
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.109-green)](https://fastapi.tiangolo.com/)
