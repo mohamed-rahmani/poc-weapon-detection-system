@@ -5,7 +5,7 @@
 [![YOLOv8](https://img.shields.io/badge/YOLOv8-Ultralytics-orange)](https://github.com/ultralytics/ultralytics)
 [![CUDA](https://img.shields.io/badge/CUDA-Supported-brightgreen)](https://developer.nvidia.com/cuda-toolkit)
 
-Professional-grade REST API for real-time weapon detection using YOLOv8. Built with enterprise software engineering principles, optimized for GPU inference, and designed for production deployment.
+REST API for real-time weapon detection using YOLOv8. Built with enterprise software engineering principles, optimized for GPU inference, and designed for production deployment.
 
 ## 🌟 Features
 
