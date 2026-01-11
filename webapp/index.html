@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weapon Detection - Interface Web</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🛡️ Weapon Detection System</h1>
+        <p>Détection d'armes en temps réel avec IA</p>
+      </header>
+
+      <div class="main-content">
+        <!-- Section Upload Image -->
+        <section class="card">
+          <h2>📷 Détection par Image</h2>
+          <div class="upload-section">
+            <input type="file" id="imageInput" accept="image/*" hidden />
+            <button id="uploadBtn" class="btn btn-primary">
+              Choisir une image
+            </button>
+            <div class="threshold-control">
+              <label for="imageThreshold"
+                >Seuil de confiance:
+                <span id="imageThresholdValue">0.5</span></label
+              >
+              <input
+                type="range"
+                id="imageThreshold"
+                min="0"
+                max="1"
+                step="0.05"
+                value="0.5"
+              />
+            </div>
+          </div>
+          <div id="imagePreview" class="preview-container hidden">
+            <img id="previewImage" alt="Preview" />
+            <button id="detectImageBtn" class="btn btn-success">
+              Détecter les armes
+            </button>
+          </div>
+          <div id="imageResults" class="results hidden"></div>
+        </section>
+
+        <!-- Section Webcam -->
+        <section class="card">
+          <h2>📹 Détection Webcam en Temps Réel</h2>
+          <div class="webcam-controls">
+            <button id="startWebcamBtn" class="btn btn-primary">
+              Démarrer la Webcam
+            </button>
+            <button id="stopWebcamBtn" class="btn btn-danger hidden">
+              Arrêter la Webcam
+            </button>
+            <div class="threshold-control">
+              <label for="webcamThreshold"
+                >Seuil de confiance:
+                <span id="webcamThresholdValue">0.5</span></label
+              >
+              <input
+                type="range"
+                id="webcamThreshold"
+                min="0"
+                max="1"
+                step="0.05"
+                value="0.5"
+              />
+            </div>
+            <div class="detection-toggle">
+              <label>
+                <input type="checkbox" id="autoDetect" checked />
+                Détection automatique
+              </label>
+            </div>
+          </div>
+          <div id="webcamContainer" class="webcam-container hidden">
+            <video id="webcamVideo" autoplay playsinline></video>
+            <canvas id="detectionCanvas"></canvas>
+          </div>
+          <div id="webcamResults" class="results hidden"></div>
+        </section>
+
+        <!-- Section Statistiques -->
+        <section class="card stats-card">
+          <h2>📊 Statistiques de session</h2>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <span class="stat-label">Analyses effectuées:</span>
+              <span class="stat-value" id="totalDetections">0</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Armes détectées:</span>
+              <span class="stat-value" id="weaponsDetected">0</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Dernière détection:</span>
+              <span class="stat-value" id="lastDetection">-</span>
+            </div>
+          </div>
+          <div
+            style="
+              margin-top: 15px;
+              padding: 12px;
+              background: rgba(0, 0, 0, 0.2);
+              border-radius: 8px;
+            "
+          >
+            <p
+              style="color: var(--text-secondary); font-size: 0.9rem; margin: 0"
+            >
+              ℹ️ <strong>Analyses effectuées:</strong> Nombre total d'objets
+              détectés dans toutes les analyses<br />
+              ⚠️ <strong>Armes détectées:</strong> Compteur cumulé d'armes
+              trouvées (toutes classes confondues)
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <!-- Loading Overlay -->
+      <div id="loadingOverlay" class="loading-overlay hidden">
+        <div class="spinner"></div>
+        <p>Détection en cours...</p>
+      </div>
+
+      <!-- Toast Notifications -->
+      <div id="toastContainer" class="toast-container"></div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

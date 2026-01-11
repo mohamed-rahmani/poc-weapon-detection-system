@@ -1,0 +1,19 @@
+# Core Framework
+fastapi[standard]
+pydantic
+pydantic-settings
+uvicorn
+
+# Computer Vision & ML
+ultralytics
+opencv-python
+Pillow
+numpy
+
+# Utilities
+python-multipart
+aiofiles
+
+# Note: PyTorch with CUDA support must be installed manually
+# Install with: pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+# Or for your specific CUDA version from: https://pytorch.org/get-started/locally/
