@@ -1,0 +1,17 @@
+{
+  "expo": {
+    "name": "Weapon Detection",
+    "slug": "weapon-detection-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.weapondetection.mobile"
+    },
+    "android": {
+      "package": "com.weapondetection.mobile"
+    },
+    "sdkVersion": "54.0.0"
+  }
+}
